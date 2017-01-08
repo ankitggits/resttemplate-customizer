@@ -20,14 +20,14 @@ utility.test=https://urlToChange/something
 ****RestTemplate****
 
 	@Bean
-    public IAPIMRestTemplateCustomizer customize(Environment environment){
-        return new APIMRestTemplateCustomizer(environment);
+    public IRestTemplateCustomizer customize(Environment environment){
+        return new RestTemplateCustomizer(environment);
     }
 
     @Bean(name = "customizedRestTemplate")
-    public RestTemplate apimCustomizedRestTemplate(IAPIMRestTemplateCustomizer customizer){
+    public RestTemplate customizedRestTemplate(IRestTemplateCustomizer customizer){
         RestTemplate restTemplate = new RestTemplate();
-        customizer.customize(restTemplate, APIMOutboundStream.NETAXEPT);
+        customizer.customize(restTemplate, OutboundStream.TEST);
         return restTemplate;
     }
 
