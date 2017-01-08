@@ -8,16 +8,16 @@ This utility intercepts all your outbound http requests and modify it (add heade
 
 
 ##
-****How To Use****
+***How To Use***
 
 ###
-****Configuration****
+***Configuration***
 
 utility.subscriptionkey=headerToAdd
 
 utility.test=https://urlToChange/something
 
-****RestTemplate****
+***RestTemplate***
 
 	@Bean
     public IRestTemplateCustomizer customize(Environment environment){
